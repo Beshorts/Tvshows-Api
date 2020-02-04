@@ -1,0 +1,9 @@
+<% @tvshows.shows.each do |show| %>
+<% if show['show']["image"].present? %>
+<%= image_tag(show['show']['image']['medium']) %>
+<%= show['show']['name'] %>
+<%= show['show']['status'] %>
+<%= show['show']['network']['name'] %>
+<%= link_to "Details",tvshow_path(show["show"]["id"]) %>
+<% end %>
+<% end %>

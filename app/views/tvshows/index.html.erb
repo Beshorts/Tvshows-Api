@@ -1,1 +1,13 @@
 <h1>TVSHOWS#INDEX</h1>
+
+  <%= render 'shared/search' %>
+
+<div class="header_page">
+  <h3><%= @tvshows.show_description %></h3>
+</div>
+
+  <% if params[:search] %>
+  <%= render 'search_params' %>
+  <% else %>
+  <%= render 'tvshows' %>
+  <%end %>
