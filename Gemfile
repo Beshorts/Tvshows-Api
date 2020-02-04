@@ -16,6 +16,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# add gem to handle api requests
+gem 'httparty'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
