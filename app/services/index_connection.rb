@@ -15,7 +15,6 @@ module TvShows
         TvmazeApi::TvShow.search(@search_params)
       else
         TvmazeApi::TvShow.get_upcoming_today
-
       end
     end
   end

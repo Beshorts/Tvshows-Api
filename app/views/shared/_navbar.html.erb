@@ -2,12 +2,18 @@
   <%= link_to "#", class: "navbar-brand" do %>
     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
-
+    <%= form_tag(tvshows_path, :method => "get", enforce_utf8: false) do %>
+    <div class="input-group">
+      <%= text_field_tag :search, params[:search], id: "search-input",
+      placeholder: "Search for a Tvshow", class: "form-control" %>
+      <%= button_tag(type: "submit", class: "btn btn-warning search-btn") do %>
+      <i class="fa fa-search"></i>
+      <% end %>
+    </div>
+    <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>

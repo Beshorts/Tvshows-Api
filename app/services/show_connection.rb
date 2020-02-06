@@ -7,8 +7,8 @@ module TvShows
     end
 
     def cover_image
-         show_data['image'].present?
-         show_data['image']['medium']
+      show_data['image'].present?
+      show_data['image']['medium']
     end
 
     def show_name
@@ -17,6 +17,10 @@ module TvShows
 
     def premiered
       show_data['premiered']
+    end
+
+    def status
+      show_data['status']
     end
 
     def genres

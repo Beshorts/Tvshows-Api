@@ -12,4 +12,6 @@ class TvshowsController < ApplicationController
   def show
     @tvshow = TvShows::ShowConnection.new(params[:id])
   end
+
+
 end

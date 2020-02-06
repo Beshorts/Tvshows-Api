@@ -1,0 +1,34 @@
+
+  <% @tvshows.shows.each do |show| %>
+    <% if show['show']["image"].present? %>
+      <% if show['show']["genres"].any? %>
+        <%= image_tag(show['show']['image']['medium']) %>
+        <div class="btn-group dropleft" >
+          <i class="fas fa-ellipsis-v" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+            <div class="dropdown-menu">
+              <h5>Air time h <%= show['airtime'] %></h5>
+              <h5>on <%= show['show']['network']['name'] %> network</h5>
+              <% if show['summary'].nil? %>
+                <h5>Storyline not available</h5>
+              <% end %>
+              <% if !show['summary'].nil? %>
+                 <h5><%= show['summary'].gsub(%r{</?[^>]+?>}, '') %></h5>
+              <%end %>
+              <%= link_to "Tvshow details",tvshow_path(show['show']['id']) %>
+            </div>
+        </div>
+        <%= show['show']['name'] %>
+        <i class="far fa-calendar-alt"></i>
+          <%= show['airdate'] %>
+          <%= show['season'] %>
+          <%= show['number'] %>
+          <%= show['show']['genres'][0] %>
+          <%= show['show']['genres'][1] %>
+          <%= show['show']['genres'][2] %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+
+
+
