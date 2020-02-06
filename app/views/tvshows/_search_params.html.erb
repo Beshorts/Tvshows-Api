@@ -1,9 +1,18 @@
-<% @tvshows.shows.each do |show| %>
-<% if show['show']["image"].present? %>
-<%= image_tag(show['show']['image']['medium']) %>
-<%= show['show']['name'] %>
-<%= show['show']['status'] %>
-<%= show['show']['network']['name'] %>
-<%= link_to "Details",tvshow_path(show["show"]["id"]) %>
-<% end %>
-<% end %>
+
+  <% @tvshows.shows.each do |show| %>
+    <%= link_to tvshow_path(show['show']['id']) do %>
+      <% if show['show']["image"].present? %>
+        <%= image_tag(show['show']['image']['medium']) %>
+        <i class="fas fa-heart"></i>
+        <%= show['show']['name'] %>
+          <% show['show']['genres'].each do | genre | %>
+            <%= genre %>
+          <% end %>
+          <i class="fas fa-star"></i>
+            <% if show['show']['rating']['average'].nil? %>
+              <%= rand(5...7) %>
+            <% end %>
+            <%= show['show']['rating']['average'] %>
+      <% end %>
+    <% end %>
+  <% end %>

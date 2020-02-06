@@ -1,12 +1,15 @@
 <%= image_tag(@tvshow.cover_image)%>
 <h5 class="show_name"><%= @tvshow.show_name%></h5>
 <p><%= @tvshow.premiered%></p>
-<% @tvshow.genres.each do |genre| %>
-<h5><%= genre %></h5>
-<%end%>
+<p><%= @tvshow.status%></p>
 <% @tvshow.cast.first(8).each do |people|%>
+<% if !people['person']['image'].nil? %>
 <%= image_tag(people['person']['image']['medium']) %>
+<% end %>
 <%= people['person']['name'] %>
 <h6> as <%= people['character']['name'] %></h6>
 <%end %>
+<% @tvshow.genres.each do |genre| %>
+<h5><%= genre %></h5>
+<%end%>
 <%= @tvshow.summary%>
