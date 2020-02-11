@@ -1,0 +1,45 @@
+
+
+  <% @genre.shows.each do |element| %>
+  <% if element['show']["image"].present? %>
+<% if element['show']["genres"].any? %>
+        <% element['show']["genres"].each do |type| %>
+        <% if type.include?(params[:genre]) %>
+          <div class="card-genre">
+          <%= image_tag(element['show']['image']['medium']) %>
+          <div class="btn-group dropleft" >
+    <i class="fas fa-ellipsis-v" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+    <div class="dropdown-menu">
+      <h5>Air time h <%= element['airtime'] %></h5>
+      <% if element['show']['network'].nil? %>
+      <h5>on <%= element['show']['webChannel']['name'] %> Web Channel</h5>
+      <%end%>
+      <% if !element['show']['network'].nil? %>
+      <h5>on <%= element['show']['network']['name'] %> network</h5>
+      <%end %>
+      <% if element['summary'].nil? %>
+      <h5>Storyline not available</h5>
+      <% end %>
+      <% if !element['summary'].nil? %>
+      <h5><%= element['summary'].gsub(%r{</?[^>]+?>}, '') %></h5>
+      <%end %>
+      <%= link_to "Tvshow details",tvshow_path(element['show']['id']) %>
+    </div>
+  </div>
+  <div class="card-upcomings-info">
+    <%= element['show']['name'] %>
+    <i class="far fa-calendar-alt"></i>
+    <%= element['airdate'] %>
+    <%= element['season'] %>
+    <%= element['number'] %>
+    <%= element['show']['genres'][0] %>
+    <%= element['show']['genres'][1] %>
+    <%= element['show']['genres'][2] %>
+
+  </div>
+          </div>
+        <% end %>
+        <% end %>
+      <% end %>
+<% end %>
+<% end %>

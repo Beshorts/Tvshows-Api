@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+  # get tvshows genres from upcomings today
+  def genre
+    @genre = TvShows::IndexConnection.new(params[:search])
+  end
 end
