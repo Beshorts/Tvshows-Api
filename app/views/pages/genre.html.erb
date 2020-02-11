@@ -1,5 +1,7 @@
-<!-- render genre_cards if genre_path match params[:genre] -->
-<%=render 'genre_cards'%>
-<!-- if genre_path doesn't match with params -->
-<%= render 'shared/genre_not_found'%>
 
+<!--create helper if params don't match any Tv shows-->
+<% if genre_found? %>
+  <%=render 'genre_cards'%>
+<% else %>
+  <%= render 'shared/genre_not_found'%>
+<% end %>
