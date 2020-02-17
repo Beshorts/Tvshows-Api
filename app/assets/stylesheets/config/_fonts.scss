@@ -1,16 +1,12 @@
-// Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+// Import Google fonts -BEA
+@import url('https://fonts.googleapis.com/css?family=Darker+Grotesque:600,700,800|Source+Sans+Pro:400,600,700&display=swap');
 
-// Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+// Define fonts for body and headers -BEA
+$body-font: 'Source Sans Pro', "sans-serif";
+$headers-font: 'Darker Grotesque', 'Source Sans Pro', 'sans-serif';
+// font weights
+$regular: 400; // only for Source Sans Pro
+$semi-bold: 600; // available for both
+$bold: 700; // available for both
+$extra-bold: 800; // only Dark Grot
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
