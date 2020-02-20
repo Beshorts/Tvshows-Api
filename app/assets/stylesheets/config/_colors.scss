@@ -1,19 +1,16 @@
 // variables color scheme -BEA
-
- $dark-blue-grey: #1A1B24; // background for all pages + menu
- $darker-blue-grey: #11151D; // bg for sidebar
- $lightdark-blue-grey: #252631; // color for btn hover, input filed navbar, bg cards
- $yellow: #FFD232; // icons, tabs text hover, rating
- $light-orange: #FFC149; // for cta on cards
- $orange: #DF6F07; // for genres tabs on cards
- $white: #FFFFFF; // for texts
-
+$dark-blue-grey: #1A1B24; // background for all pages + menu
+$darker-blue-grey: #11151D; // bg for sidebar
+$lightdark-blue-grey: #252631; // color for tabs hover, input filed navbar, bg cards
+$yellow: #FFD232; // icons, tabs text hover, rating
+$light-orange: #FFC149; // for cta on cards
+$orange: #DF6F07; // for genres tabs on cards
+$white: #FFFFFF; // for texts
 
 // scss bootstrap are setting by default on those variables:
 $red: #FD1015;
 $blue: #167FFB;
 $yellow: #FFC65A;
-$orange: #E67E22;
 $green: #1EDD88;
 $gray: #0E0000;
 $light-gray: #F4F4F4;

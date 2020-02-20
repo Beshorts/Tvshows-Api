@@ -1,6 +1,40 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'shared/sidebar' %>
 
-  <!-- add 3 tvshow images through js fetch Api -->
-  <div id="results" class="results-container"></div>
-    <%= javascript_pack_tag 'home_poster' %>
+<!-- custom navbar only for home page -->
+<div class="navbar-home">
+  <div class="logo">
+    <%= image_tag "tvshowzLogo.png" %>
+  </div>
+  <!-- search bar -->
+   <%= form_tag(tvshows_path, :method => "get", enforce_utf8: false) do %>
+    <div class="input-group">
+     <%= text_field_tag :search, params[:search], id: "search-input",
+      placeholder: "Search for a Tv show", class: "form-control" %>
+      <%= button_tag(type: "submit", class: "btn btn-warning search-btn") do %>
+      <i class="fa fa-search"></i>
+      <% end %>
+      </div>
+    <% end %>
+  <!-- end search bar -->
+  <div class="nav-item">
+  <% if user_signed_in? %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+  <% else %>
+    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+  <% end %>
+  </div>
+</div>
+
+<div class="main-container">
+   <div class=" container-fluid ">
+    <!-- images from js fetch Api -->
+    <div id="results" class="results row ">
+    </div> <!-- end results row-->
+  </div> <!-- end  container-fluid -->
+</div> <!-- end main-container -->
+
+<!-- add 3 tvshow images through js fetch Api -->
+<%= javascript_pack_tag 'home_poster' %>
+
+
+

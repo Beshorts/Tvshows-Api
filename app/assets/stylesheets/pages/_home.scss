@@ -1,48 +1,105 @@
-// Specific CSS for your home-page
 
-body {
-  box-sizing: border-box;
-  margin: 0;
-  height: 100vh;
+.navbar-home {
   background-color: $dark-blue-grey;
+  width: 100vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  height: 7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-h1, h2, h3  {
-  font-family: $headers-font;
-  color: $white;
-  letter-spacing: 0.04em;
-  margin: 0;
+.navbar-home .input-group {
+  margin-top: 1.5625rem;
 }
 
-h1 {
-  font-size: 2.125em;
+// add flew-grow for responsive behaviour from 1440 to 768
+form {
+  flex-grow: 1;
 }
 
-h2 {
-  font-size: 1.75em;
+.navbar-home  .form-control {
+ border-radius: 100px;
+ border: none;
 }
 
-h3 {
-  font-size: 1.375em;
+#search-input {
+ background-color: $lightdark-blue-grey;
+}
+
+.navbar-home .input-group .btn-warning {
+  background-color: $darker-blue-grey;
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  .fa-search {
+    color: #74777c;
+  }
+}
+
+.navbar-home .input-group .btn-warning:hover {
+  background-color: $lightdark-blue-grey;
+  .fa-search {
+    color: $light-orange;
+  }
+}
+
+// add flew-grow for responsive search bar behaviour from 1440 to 768
+.logo  {
+  flex-grow: 1;
+  img {
+    width: 6.875rem;
+    padding: 0.8rem 0 0 2.875rem;
+  }
+}
+
+// add flew-grow for responsive search bar behaviour from 1440 to 768
+.nav-item  {
+  flex-grow: 1;
+  a {
+    float: right;
+    font-family: $body-font;
+    font-size: 1rem;
+    padding: 1.875rem 2.5rem 0 0;
+    font-weight: $semi-bold;
+  }
+}
+
+.nav-item a:hover {
+  color: $light-orange;
 }
 
 
-h4, h5, p {
-  font-family: $body-font;
-  color: $white;
-  letter-spacing: 0.04em;
-  margin: 0;
+.container-fluid  {
+  max-width: fit-content;
+  padding-right: 1.875rem;
+  padding-left: 1.875rem;
+  margin-left: 15.625rem;
 }
 
-h4 {
-  font-size: 1.25em;
+.btn-primary {
+  padding: 0.375rem 2.75rem;
+  font-size: 1.1rem;
+  font-weight: $semi-bold;
+}
+
+.text-images .container-fluid {
+  width: 74%;
+  margin-right: auto;
+  margin-left: 22.625rem;
+}
+
+.results {
+  margin-top: 15.625rem;
+}
+
+.show-image  {
+  border-radius: 20px;
+  box-shadow: 8px 8px 16px  rgba(0, 0, 0, 0.2);
 }
 
 
-h5 {
-  font-size: 0.875em;
-}
 
-p{
-  font-size: 1em;
-}
+

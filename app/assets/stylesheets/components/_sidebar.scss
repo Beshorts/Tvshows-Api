@@ -1,0 +1,39 @@
+.sidebar {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 15rem;
+  height: 86vh;
+  background-color: $darker-blue-grey;
+  border-top-right-radius: 160px;
+}
+
+.sidebar-scroll {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(26, 8%);
+  margin-top: 8.75rem;
+  overflow-y: scroll;
+  height: 70vh;
+}
+
+// hide scrollbar from chrome, safari and opera on sidebar layout
+.sidebar-scroll::-webkit-scrollbar {
+  display: none;
+}
+// center texts inside link_to rows
+.sidebar-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-scroll a:hover {
+text-decoration: none;
+background-color: $lightdark-blue-grey;
+h3 {
+  color: $yellow;
+  font-weight: $bold;
+
+  }
+}
