@@ -28,12 +28,19 @@
   justify-content: center;
 }
 
+.sidebar-scroll a {
+  transition:  1s ease;
+  h3 {
+  transition:  1s ease;
+
+  }
+
+}
+
 .sidebar-scroll a:hover {
 text-decoration: none;
 background-color: $lightdark-blue-grey;
 h3 {
   color: $yellow;
-  font-weight: $bold;
-
   }
 }

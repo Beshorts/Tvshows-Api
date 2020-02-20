@@ -1,12 +1,77 @@
-.navbar-lewagon {
+.navbar-home {
+  background-color: $dark-blue-grey;
+  width: 100vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  height: 7rem;
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-home .input-group {
+  margin-top: 1.5625rem;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+// add flew-grow for responsive behaviour from 1440 to 768
+form {
+  flex-grow: 1;
 }
+
+.navbar-home  .form-control {
+ border-radius: 100px;
+ border: none;
+}
+
+#search-input {
+ background-color: $lightdark-blue-grey;
+}
+
+.navbar-home .input-group .btn-warning {
+  background-color: $darker-blue-grey;
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: 0.6s;
+
+  .fa-search {
+    color: #74777c;
+    transition:  1s ease;
+  }
+}
+
+.navbar-home .input-group .btn-warning:hover {
+  background-color: $lightdark-blue-grey;
+  .fa-search {
+    color: $light-orange;
+  }
+}
+
+// add flew-grow for responsive search bar behaviour from 1440 to 768
+.logo  {
+  flex-grow: 1;
+  img {
+    width: 6.875rem;
+    padding: 0.8rem 0 0 2.875rem;
+  }
+}
+
+// add flew-grow for responsive search bar behaviour from 1440 to 768
+.nav-item  {
+  flex-grow: 1;
+  a {
+    float: right;
+    font-family: $body-font;
+    font-size: 1rem;
+    padding: 1.875rem 2.5rem 0 0;
+    font-weight: $semi-bold;
+    transition:  1s ease;
+
+  }
+}
+
+.nav-item a:hover {
+  color: $light-orange;
+}
+
