@@ -1,108 +1,109 @@
-<div class="sidebar-container">
-  <div class="sidebar">
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Action", genre_path(genre: "Action") %>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Anime", genre_path(genre: "Anime")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Adventure", genre_path(genre: "Adventure")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Children", genre_path(genre: "Children")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Comedy", genre_path(genre: "Comedy")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Crime", genre_path(genre: "Crime")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Drama", genre_path(genre: "Drama")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Espionage", genre_path(genre: "Espionage")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Family", genre_path(genre: "Family")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Fantasy", genre_path(genre: "Fantasy")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Food", genre_path(genre: "Food")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "History", genre_path(genre: "History")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Horror", genre_path(genre: "Horror")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Legal", genre_path(genre: "Legal")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Medical", genre_path(genre: "Medical")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Music", genre_path(genre: "Music")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Mystery", genre_path(genre: "Mystery")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Nature", genre_path(genre: "Nature")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Romance", genre_path(genre: "Romance")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Science-Fiction", genre_path(genre: "Science-Fiction")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Sports", genre_path(genre: "Sports")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Supernatural", genre_path(genre: "Supernatural")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Thriller", genre_path(genre: "Thriller")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Travel", genre_path(genre: "Travel")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "War", genre_path(genre: "War")%>
-      </h4>
-    </div>
-    <div class="sidebar-row">
-      <h4 class="sidebar-text"><%= link_to "Western", genre_path(genre: "Western")%>
-      </h4>
-    </div>
+<div class="sidebar">
+  <div class="sidebar-scroll">
+
+    <%= link_to genre_path(genre: "Action"), :class =>"sidebar-row " do %>
+    <h3>Action</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Anime"), :class =>"sidebar-row " do %>
+    <h3>Anime</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Adventure"), :class =>"sidebar-row" do %>
+    <h3>Adventure</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Children"), :class =>"sidebar-row" do %>
+    <h3>Children</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Comedy"), :class =>"sidebar-row" do %>
+    <h3>Comedy</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Crime"), :class =>"sidebar-row" do %>
+    <h3>Crime</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Drama"), :class =>"sidebar-row" do %>
+    <h3>Drama</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Espionage"), :class =>"sidebar-row" do %>
+    <h3>Espionage</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Family"), :class =>"sidebar-row" do %>
+    <h3>Family</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Fantasy"), :class =>"sidebar-row" do %>
+    <h3>Fantasy</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Food"), :class =>"sidebar-row" do %>
+    <h3>Food</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "History"), :class =>"sidebar-row" do %>
+    <h3>History</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Horror"), :class =>"sidebar-row" do %>
+    <h3>Horror</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Legal"), :class =>"sidebar-row" do %>
+    <h3>Legal</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Medical"), :class =>"sidebar-row" do %>
+    <h3>Medical</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Music"), :class =>"sidebar-row" do %>
+    <h3>Music</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Mystery"), :class =>"sidebar-row" do %>
+    <h3>Mystery</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Nature"), :class =>"sidebar-row" do %>
+    <h3>Nature</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Romance"), :class =>"sidebar-row" do %>
+    <h3>Romance</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Science-Fiction"), :class =>"sidebar-row" do %>
+    <h3>Science-Fiction</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Sports"), :class =>"sidebar-row" do %>
+    <h3>Sports</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Supernatural"), :class =>"sidebar-row" do %>
+    <h3>Supernatural</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Thriller"), :class =>"sidebar-row" do %>
+    <h3>Thriller</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Travel"), :class =>"sidebar-row" do %>
+    <h3>Travel</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "War"), :class =>"sidebar-row" do %>
+    <h3>War</h3>
+    <% end %>
+
+    <%= link_to genre_path(genre: "Western"), :class =>"sidebar-row" do %>
+    <h3>Western</h3>
+    <% end %>
+
   </div>
 </div>
