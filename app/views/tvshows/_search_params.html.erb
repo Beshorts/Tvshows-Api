@@ -1,18 +1,21 @@
 
-  <% @tvshows.shows.each do |show| %>
-    <%= link_to tvshow_path(show['show']['id']) do %>
-      <% if show['show']["image"].present? %>
-        <%= image_tag(show['show']['image']['medium']) %>
-        <i class="fas fa-heart"></i>
-        <%= show['show']['name'] %>
-          <% show['show']['genres'].each do | genre | %>
-            <%= genre %>
-          <% end %>
-          <i class="fas fa-star"></i>
-            <% if show['show']['rating']['average'].nil? %>
-              <%= rand(5...7) %>
-            <% end %>
-            <%= show['show']['rating']['average'] %>
+<% search_filter.each do |show| %>
+<div class="cards-search">
+  <%= link_to tvshow_path(show['show']['id']) do %>
+  <%= image_tag(show['show']['image']['medium']) %>
+  <div class="infos-search">
+    <h3 class="search-name"><%= show['show']['name'].truncate(23) %>
+    </h3>
+    <div class="rating-icon">
+      <i class="fas fa-star"></i>
+      <% if show['show']['rating']['average'].nil? %>
+      <h4 class="rating"><%= rand(5...7) %>
+      </h4>
       <% end %>
-    <% end %>
+      <h4 class="rating"><%= show['show']['rating']['average'] %>
+      </h4>
+    </div> <!-- close rating -->
+  </div> <!-- close infos-search -->
   <% end %>
+</div> <!-- close cards-search -->
+<% end %>
