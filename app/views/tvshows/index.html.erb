@@ -2,12 +2,19 @@
 
 <%= render 'shared/sidebar' %>
 
-<div class="header_page">
-  <h3><%= @tvshows.show_description %></h3>
-</div>
 
-<% if params[:search] %>
-  <%= render 'search_params' %>
-<% else %>
-  <%= render 'upcomings' %>
-<%end %>
+
+<div class="main-container ">
+ <div class="container-fluid ">
+  <div class="upcomings">
+<div class="header-pages">
+  <h1><%= @tvshows.show_description %></h1>
+</div>
+    <% if params[:search] %>
+    <%= render 'search_params' %>
+    <% else %>
+    <%= render 'upcomings' %>
+    <%end %>
+  </div>
+</div> <!-- end  container-fluid -->
+</div> <!-- end main-container -->

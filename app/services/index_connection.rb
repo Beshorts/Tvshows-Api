@@ -7,7 +7,7 @@ module TvShows
     end
 
     def show_description
-      @search_params ? "Results for `#{@search_params}`" : " Today's Upcoming "
+      @search_params ? "Results for `#{@search_params}`" : " Upcoming today "
     end
 
     def shows

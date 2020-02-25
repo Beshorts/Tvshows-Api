@@ -1,8 +1,13 @@
+// hide scrollbar from chrome, safari and opera on sidebar layout
+.sidebar-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 .sidebar {
   position: fixed;
   left: 0px;
   bottom: 0px;
-  width: 15rem;
+  width: 12rem;
   height: 86vh;
   background-color: $darker-blue-grey;
   border-top-right-radius: 160px;
@@ -16,11 +21,6 @@
   overflow-y: scroll;
   height: 70vh;
 }
-
-// hide scrollbar from chrome, safari and opera on sidebar layout
-.sidebar-scroll::-webkit-scrollbar {
-  display: none;
-}
 // center texts inside link_to rows
 .sidebar-row {
   display: flex;
@@ -32,9 +32,7 @@
   transition:  1s ease;
   h3 {
   transition:  1s ease;
-
   }
-
 }
 
 .sidebar-scroll a:hover {
