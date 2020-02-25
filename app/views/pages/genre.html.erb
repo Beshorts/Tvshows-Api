@@ -1,9 +1,22 @@
 <%= render 'shared/sidebar' %>
 
+<div class="main-container ">
+ <div class="container-fluid ">
+  <div class="genres">
+    <div class="header-pages">
+      <% if genre_found? %>
+      <h1>Results for category "<%= params[:genre] %>"</h1>
+      <% end %>
+    </div>
+    <!--create helper if params don't match any Tv shows-->
+    <% if genre_found? %>
+    <%=render 'genre_cards'%>
+    <% else %>
+    <div class="not-found">
+      <h1>Sorry... any match for your search</h1>
+    </div>
+    <% end %>
+  </div> <!-- end  genres -->
+ </div> <!-- end  container-fluid -->
+</div> <!-- end main-container -->
 
-<!--create helper if params don't match any Tv shows-->
-<% if genre_found? %>
-  <%=render 'genre_cards'%>
-<% else %>
-  <%= render 'shared/genre_not_found'%>
-<% end %>

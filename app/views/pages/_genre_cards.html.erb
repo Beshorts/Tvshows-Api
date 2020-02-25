@@ -1,44 +1,66 @@
 
 
-<% @genre.shows.each do |element| %>
-<% if element['show']["image"].present? %>
-<% if element['show']["genres"].any? %>
-<% element['show']["genres"].each do |type| %>
-<% if type.include?(params[:genre]) %>
-<div class="card-genre">
-  <%= image_tag(element['show']['image']['medium']) %>
-  <div class="btn-group dropleft" >
-    <i class="fas fa-ellipsis-v" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-    <div class="dropdown-menu">
-      <h5>Air time h <%= element['airtime'] %></h5>
-      <% if element['show']['network'].nil? %>
-      <h5>on <%= element['show']['webChannel']['name'] %> Web Channel</h5>
-      <%end%>
-      <% if !element['show']['network'].nil? %>
-      <h5>on <%= element['show']['network']['name'] %> network</h5>
-      <%end %>
-      <% if element['summary'].nil? %>
-      <h5>Storyline not available</h5>
-      <% end %>
-      <% if !element['summary'].nil? %>
-      <h5><%= element['summary'].gsub(%r{</?[^>]+?>}, '') %></h5>
-      <%end %>
-      <%= link_to "Tvshow details",tvshow_path(element['show']['id']) %>
+ <!-- genre_filter helper to avoid tv shows who don't fit cards parameters -->
+  <% genre_filter.each do |show| %>
+  <% show['show']["genres"].each do |type| %>
+  <% if type.include?(params[:genre]) %>
+  <!-- using Upcomings.html.erb -->
+  <div class="card-upcomings">
+  <%= image_tag(show['show']['image']['medium']) %>
+    <div class="btn-group dropdown">
+      <h4 class="more-text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</h4>
+      <div class="dropdown-menu  dropdown-menu-right">
+        <div class="dropdown-text">
+          <h2 class="episode-name"><%= show['name'] %></h2>
+          <div class="airtime-network">
+            <h4 class="airtime">At h<%= show['airtime'] %></h4>
+            <% if show['show']['network'].nil? %>
+            <h4 class="network"> - on <%= show['show']['webChannel']['name'] %>
+            </h4>
+            <%end%>
+            <% if !show['show']['network'].nil? %>
+            <h4 class="network"> - on <%= show['show']['network']['name'] %>
+            </h4>
+            <%end %>
+          </div> <!-- close airtime-network-->
+          <% if show['summary'].nil? %>
+          <p class="summary">Storyline not available</p>
+          <% end %>
+          <% if !show['summary'].nil? %>
+          <p class="summary">"<%= show['summary'].gsub(%r{</?[^>]+?>}, '') %>"</p>
+          <%end %>
+          <div class="divider">
+            <h4 class="tvshow-details"><%= link_to "Tvshow details",tvshow_path(show['show']['id']) %></h4>
+          </div> <!-- close divider-->
+        </div> <!-- close dropdown-text -->
+      </div> <!-- close btn dropleft -->
+    </div> <!-- close dropdown menu -->
+  <div  class="upcomings-text">
+    <h3 class="show-name"><%= show['show']['name'].truncate(28) %>
+    </h3>
+    <div class="airdate-calendar">
+      <i class="far fa-calendar-alt"></i>
+      <h4 class="airdate"><%= show['airdate'] %>
+      </h4>
     </div>
-  </div>
-  <div class="card-upcomings-info">
-    <%= element['show']['name'] %>
-    <i class="far fa-calendar-alt"></i>
-    <%= element['airdate'] %>
-    <%= element['season'] %>
-    <%= element['number'] %>
-    <%= element['show']['genres'][0] %>
-    <%= element['show']['genres'][1] %>
-    <%= element['show']['genres'][2] %>
-  </div>
-</div>
+    <div class="season-episode">
+      <h4 class="season">Season <%= show['season'] %>
+      </h4>
+      <% if show['number'].nil? %>
+      <h4 class="episode"> - Episode <%= show['number'] %> # </h4>
+      <% end %>
+      <% if !show['number'].nil? %>
+      <h4 class="episode"> - Episode <%= show['number'] %>
+      </h4>
+      <% end %>
+    </div>
+    <div class="genre-shows">
+      <% show['show']['genres'].each do |genre| %>
+      <p class="type"><%= genre.gsub("Science-Fiction","Sci-fi") %></p>
+      <% end %>
+    </div>
+  </div> <!-- close upcomings-text -->
+</div> <!-- close card-upcomings -->
 <% end %>
 <% end %>
-<% end %>
-<% end %>
-<% end %>
+<% end %> <!-- close genre_filter -->
