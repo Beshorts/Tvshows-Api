@@ -11,10 +11,8 @@
   </head>
   <body>
 
-    <!-- remove navbar only from home page -BEA -->
-    <% unless action_name == "home" %>
+
     <%= render 'shared/navbar' %>
-    <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>

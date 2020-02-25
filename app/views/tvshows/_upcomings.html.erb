@@ -1,42 +1,58 @@
 
-<% @tvshows.shows.each do |show| %>
-<% if show['show']["image"].present? %>
-<% if show['show']["genres"].any? %>
+<!-- shows_filter helper to avoid tv shows who don't fit cards parameters -BEA -->
+<% shows_filter.each do |show| %>
 <div class="card-upcomings">
   <%= image_tag(show['show']['image']['medium']) %>
-  <div class="btn-group dropleft" >
-    <i class="fas fa-ellipsis-v" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-    <div class="dropdown-menu">
-      <h5>Air time h <%= show['airtime'] %></h5>
-      <% if show['show']['network'].nil? %>
-      <h5>on <%= show['show']['webChannel']['name'] %> Web Channel</h5>
-      <%end%>
-      <% if !show['show']['network'].nil? %>
-      <h5>on <%= show['show']['network']['name'] %> network</h5>
-      <%end %>
-      <% if show['summary'].nil? %>
-      <h5>Storyline not available</h5>
-      <% end %>
-      <% if !show['summary'].nil? %>
-      <h5><%= show['summary'].gsub(%r{</?[^>]+?>}, '') %></h5>
-      <%end %>
-      <%= link_to "Tvshow details",tvshow_path(show['show']['id']) %>
+    <div class="btn-group dropdown">
+      <h4 class="more-text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</h4>
+      <div class="dropdown-menu  dropdown-menu-right">
+        <div class="dropdown-text">
+          <h2 class="episode-name"><%= show['name'] %></h2>
+          <div class="airtime-network">
+            <h4 class="airtime">At h<%= show['airtime'] %></h4>
+            <% if show['show']['network'].nil? %>
+            <h4 class="network"> - on <%= show['show']['webChannel']['name'] %>
+            </h4>
+            <%end%>
+            <% if !show['show']['network'].nil? %>
+            <h4 class="network"> - on <%= show['show']['network']['name'] %>
+            </h4>
+            <%end %>
+          </div> <!-- close airtime-network-->
+          <% if show['summary'].nil? %>
+          <p class="summary">Storyline not available</p>
+          <% end %>
+          <% if !show['summary'].nil? %>
+          <p class="summary">"<%= show['summary'].gsub(%r{</?[^>]+?>}, '') %>"</p>
+          <%end %>
+          <div class="divider">
+            <h4 class="tvshow-details"><%= link_to "Tvshow details",tvshow_path(show['show']['id']) %></h4>
+          </div> <!-- close divider-->
+        </div> <!-- close dropdown-text -->
+      </div> <!-- close btn dropleft -->
+    </div> <!-- close dropdown menu -->
+  <div  class="upcomings-text">
+    <h3 class="show-name"><%= show['show']['name'].truncate(28) %>
+    </h3>
+    <div class="airdate-calendar">
+      <i class="far fa-calendar-alt"></i>
+      <h4 class="airdate"><%= show['airdate'] %>
+      </h4>
     </div>
-  </div>
-  <div class="card-upcomings-info">
-    <%= show['show']['name'] %>
-    <i class="far fa-calendar-alt"></i>
-    <%= show['airdate'] %>
-    <%= show['season'] %>
-    <%= show['number'] %>
-    <%= show['show']['genres'][0] %>
-    <%= show['show']['genres'][1] %>
-    <%= show['show']['genres'][2] %>
-    <% end %>
-    <% end %>
-  </div>
-</div>
-<% end %>
+    <div class="season-episode">
+      <h4 class="season">Season <%= show['season'] %>
+      </h4>
+      <h4 class="episode"> - Episode <%= show['number'] %>
+      </h4>
+    </div>
+    <div class="genre-shows">
+      <% show['show']['genres'].each do |genre| %>
+      <p class="type"><%= genre.gsub("Science-Fiction","Sci-fi") %></p>
+      <% end %>
+    </div>
+  </div> <!-- close upcomings-text -->
+</div> <!-- close card-upcomings -->
+<% end %> <!-- close shows_filter -->
 
 
 

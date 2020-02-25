@@ -1,0 +1,138 @@
+ .card-upcomings {
+  background-color: $lightdark-blue-grey;
+  box-shadow: 8px 8px 22px  rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.875rem;
+  border-radius: 8px;
+  flex-basis: 31.25rem;
+  display: flex;
+  position: relative;
+  img {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    height: 13.125rem;
+  }
+}
+
+.upcomings-text {
+  align-self: center;
+  left: 0;
+  width: 100%;
+  padding: 0 1.25rem;
+  padding-top: 2.75rem;
+
+  .show-name {
+    padding-bottom: 0.75rem;
+    font-weight: $semi-bold;
+    font-size: 1.5em;
+  }
+  .airdate-calendar {
+    padding-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    .fa-calendar-alt {
+      color: $yellow;
+      font-size: 1em;
+    }
+  } // close airdate-calendar
+  .airdate {
+    font-weight: $bold;
+    opacity: 0.4;
+    padding-left: 0.75rem;
+  }
+  .season-episode {
+    padding-bottom: 1rem;
+    display: flex;
+    .season {
+      font-weight: $semi-bold;
+      opacity: 0.3;
+    }
+    .episode {
+      font-weight: $semi-bold;
+      opacity: 0.3;
+      padding-left: 0.5rem;
+    }
+  } // close season-episode
+} // close upcomings-text
+
+
+.genre-shows  {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr  1fr 1fr;
+  grid-column-gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  .type  {
+    font-size: 1em;
+    background-color: $orange;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2px;
+    font-weight: $semi-bold;
+  }
+} // close genres-shows
+
+.btn-group  {
+  position: absolute;
+  right: 0;
+  padding-right: 1.25rem;
+  .more-text {
+    font-size: 1.1em;
+    width: 100%;
+    cursor: pointer;
+    color: $yellow;
+    font-weight: $bold;
+    padding-top: 1rem;
+  }
+} // close btn-group
+
+.dropdown-menu {
+  background-color: $dark-blue-grey;
+  box-shadow: 8px 8px 16px  rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 25rem;
+  .dropdown-text {
+    padding: 1.375rem 2rem;
+  }
+  .episode-name {
+    line-height: 1em;
+    padding-bottom: 0.875rem;
+  }
+  .airtime-network {
+    font-size: 0.9em;
+    display: flex;
+    padding-bottom: 0.375rem;
+    .airtime {
+      font-weight: $bold;
+      opacity: 0.6;
+    }
+    .network {
+      font-weight: $bold;
+      opacity: 0.6;
+      padding-left: 0.375rem;
+    }
+  } // close airtime-network
+  .summary {
+   padding-bottom: 1.125rem;
+   opacity: 0.5;
+  }
+  .divider {
+    background-color: $lightdark-blue-grey;
+    border-radius: 4px;
+    .tvshow-details {
+      font-weight: $semi-bold;
+      text-align: center;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .tvshow-details a {
+      color: $yellow;
+      transition:  0.6s ease;
+    }
+    .tvshow-details a:hover{
+      text-decoration: none;
+      color: white;
+      opacity: 0.4;
+    }
+  } // close divider
+} // close dropdown-menu
+
+
