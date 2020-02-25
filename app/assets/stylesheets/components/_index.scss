@@ -1,12 +1,14 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
-@import "global_settings"; // body global settings -BEA
+@import "global_settings"; // body global settings
 @import "sidebar";
 @import "login_form";
-@import "upcomings"; // upcomings cards -BEA
-@import "main_container"; // responsive div containers -BEA
+@import "upcomings_cards";
+@import "main_container"; // responsive div containers for all layout
 @import "header_pages";
+@import "search_cards";
+
 
 
 

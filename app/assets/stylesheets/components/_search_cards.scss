@@ -1,0 +1,38 @@
+ .cards-search {
+  background-color: $lightdark-blue-grey;
+  box-shadow: 8px 8px 22px  rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.875rem;
+  border-radius: 8px;
+  img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 24.125rem;
+  }
+  .infos-search {
+    padding: 10px 20px;
+  }
+  .search-name {
+    font-size: 1.5em;
+    font-weight: $bold;
+
+  }
+  .rating-icon {
+    padding-top: 10px;
+    display: flex;
+    .fa-star {
+     font-size: 1.2em;
+     color: $yellow;
+
+    }
+    .rating {
+      padding-left: 6px;
+      font-weight: $bold;
+      color: $yellow;
+    }
+  } // close infos-search
+} // close cards-search
+
+
+.cards-search a:hover {
+  text-decoration: none;
+}

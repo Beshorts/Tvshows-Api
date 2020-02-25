@@ -1,5 +1,5 @@
 module TvshowsHelper
-  # to avoid tv shows who don't fit cards parameters -BEA
+  # to avoid tv shows who don't fit cards parameters
   def shows_filter
     @tvshows.shows.select do |item|
       unless item['show']['genres'].empty? || item['show']['genres'].nil?
@@ -7,6 +7,12 @@ module TvshowsHelper
           item
         end
       end
+    end
+  end
+
+  def search_filter
+    @tvshows.shows.select do |item|
+      item['show']["image"].present?
     end
   end
 end
