@@ -1,15 +1,51 @@
-<%= image_tag(@tvshow.cover_image)%>
-<h5 class="show_name"><%= @tvshow.show_name%></h5>
-<p><%= @tvshow.premiered%></p>
-<p><%= @tvshow.status%></p>
-<% @tvshow.cast.first(8).each do |people|%>
-<% if !people['person']['image'].nil? %>
-<%= image_tag(people['person']['image']['medium']) %>
-<% end %>
-<%= people['person']['name'] %>
-<h6> as <%= people['character']['name'] %></h6>
-<%end %>
-<% @tvshow.genres.each do |genre| %>
-<h5><%= genre %></h5>
-<%end%>
-<%= @tvshow.summary%>
+<div class="tvshow-details">
+  <div class="image-original">
+    <%= image_tag(@tvshow.cover_image_original)%>
+  </div>
+  <div class="show-header-container">
+    <div class="show-header">
+      <h1 class="show_name"><%= @tvshow.show_name%>
+      </h1>
+      <div class="rating-show">
+        <i class="fas fa-star"></i>
+        <% if @tvshow.rating.nil? %>
+        <h4 class="average"><%= rand(5...7) %>
+        </h4>
+        <% end %>
+        <h4 class="average"><%= @tvshow.rating %>
+        </h4>
+      </div> <!-- close rating-show -->
+      <div class="premiered-status">
+        <h3 class="premiered">Premiered: <%= @tvshow.premiered%>
+        </h3>
+        <h3 class="status">- Status: <%= @tvshow.status%>
+        </h3>
+      </div> <!-- close premiered-status -->
+      <div class="show-genres-container">
+        <% @tvshow.genres.each do |genre| %>
+        <h4 class="type-show"><%= genre.gsub("Science-Fiction","Sci-fi") %>
+        </h4>
+        <%end%>
+      </div> <!-- close show-genres-container -->
+    </div> <!-- close show-header -->
+  </div> <!-- close show-header-container -->
+  <div class="characters-container">
+    <% @tvshow.cast.first(8).each do |people|%>
+    <div class="characters">
+      <% if !people['person']['image'].nil? %>
+      <%= image_tag(people['person']['image']['medium']) %>
+      <% end %>
+      <div class="character-name">
+        <h4 class="name-actor"><%= people['person']['name'] %>
+        </h4>
+        <h4 class="name-character"> as <%= people['character']['name'] %>
+        </h4>
+      </div> <!-- close character-name -->
+    </div> <!-- close characters -->
+    <%end %>
+  </div> <!-- close characters-container -->
+  <div class="summary-show-container">
+    <h4 class="summary-show"><%= @tvshow.summary%>
+    </h4>
+  </div> <!-- close summary-show-container -->
+</div> <!-- close tvshow-details -->
