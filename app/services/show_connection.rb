@@ -11,6 +11,10 @@ module TvShows
       show_data['image']['medium']
     end
 
+    def cover_image_original
+      show_data['image']['original']
+    end
+
     def show_name
       show_data['name']
     end
@@ -21,6 +25,10 @@ module TvShows
 
     def status
       show_data['status']
+    end
+
+    def rating
+      show_data['rating']['average']
     end
 
     def genres

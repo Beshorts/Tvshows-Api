@@ -7,14 +7,14 @@
 <div class="main-container ">
  <div class="container-fluid ">
   <div class="upcomings-and-search">
-<div class="header-pages">
-  <h1><%= @tvshows.show_description %></h1>
-</div>
+    <div class="header-pages">
+      <h1><%= @tvshows.show_description %></h1>
+    </div>
     <% if params[:search] %>
     <%= render 'search_params' %>
     <% else %>
     <%= render 'upcomings' %>
     <%end %>
   </div>
-</div> <!-- end  container-fluid -->
+ </div> <!-- end  container-fluid -->
 </div> <!-- end main-container -->
