@@ -18,7 +18,7 @@
       <div class="premiered-status">
         <h3 class="premiered">Premiered: <%= @tvshow.premiered%>
         </h3>
-        <h3 class="status">- Status: <%= @tvshow.status%>
+        <h3 class="status">-  Status: <%= @tvshow.status%>
         </h3>
       </div> <!-- close premiered-status -->
       <div class="show-genres-container">
@@ -29,6 +29,7 @@
       </div> <!-- close show-genres-container -->
     </div> <!-- close show-header -->
   </div> <!-- close show-header-container -->
+  <div class="characters-container-wrapper">
   <div class="characters-container">
     <% @tvshow.cast.first(8).each do |people|%>
     <div class="characters">
@@ -38,12 +39,20 @@
       <div class="character-name">
         <h4 class="name-actor"><%= people['person']['name'] %>
         </h4>
-        <h4 class="name-character"> as <%= people['character']['name'] %>
+        <h4 class="name-character"> as <br> <%= people['character']['name'] %>
         </h4>
       </div> <!-- close character-name -->
     </div> <!-- close characters -->
     <%end %>
   </div> <!-- close characters-container -->
+        <button id="prev">
+        <i class="fas fa-angle-left"></i>
+      </button>
+      <button id="next">
+        <i class="fas fa-angle-right"></i>
+      </button>
+    </div> <!-- close characters-container-wrapper -->
+
   <div class="summary-show-container">
     <h4 class="summary-show"><%= @tvshow.summary%>
     </h4>

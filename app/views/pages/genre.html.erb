@@ -20,3 +20,8 @@
  </div> <!-- end  container-fluid -->
 </div> <!-- end main-container -->
 
+<!-- remove bg color on container-fluid when there is no tvshows genre founded -->
+<%= javascript_pack_tag 'change_bg' %>
+
+<!-- add full height bg color on container-fluid if card-upcomings are less than 7 elements -->
+<%= javascript_pack_tag 'add_bg_genres' %>
