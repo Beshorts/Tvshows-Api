@@ -1,8 +1,5 @@
-<h1>TVSHOWS#INDEX</h1>
 
-<%= render 'shared/sidebar' %>
-
-
+<%#= render 'shared/sidebar' %>
 
 <div class="main-container ">
  <div class="container-fluid ">
@@ -11,10 +8,15 @@
       <h1><%= @tvshows.show_description %></h1>
     </div>
     <% if params[:search] %>
+    <div class="search-results">
     <%= render 'search_params' %>
+  </div>
     <% else %>
     <%= render 'upcomings' %>
     <%end %>
   </div>
  </div> <!-- end  container-fluid -->
 </div> <!-- end main-container -->
+
+<!-- add full height bg color on container-fluid if search reuslts are less than 3 elements -->
+<%= javascript_pack_tag 'add_bg_search' %>

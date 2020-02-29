@@ -1,9 +1,15 @@
  .upcomings-and-search {
   max-width: 68.75rem;
-  padding-top: 12.625rem;
+  padding-top: 16.625rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  .search-results {
+    width: 1000px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
 }
 
 
