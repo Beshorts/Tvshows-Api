@@ -1,8 +1,7 @@
 
-<%#= render 'shared/sidebar' %>
+<%= render 'shared/sidebar' %>
 
 <div class="main-container ">
- <div class="container-fluid ">
   <div class="upcomings-and-search">
     <div class="header-pages">
       <h1><%= @tvshows.show_description %></h1>
@@ -15,8 +14,6 @@
     <%= render 'upcomings' %>
     <%end %>
   </div>
- </div> <!-- end  container-fluid -->
 </div> <!-- end main-container -->
 
-<!-- add full height bg color on container-fluid if search reuslts are less than 3 elements -->
-<%= javascript_pack_tag 'add_bg_search' %>
+
