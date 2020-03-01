@@ -2,7 +2,7 @@
 <% search_filter.each do |show| %>
 <div class="cards-search">
   <%= link_to tvshow_path(show['show']['id']) do %>
-  <%= image_tag(show['show']['image']['medium']) %>
+  <%= image_tag(show['show']['image']['original']) %>
   <div class="infos-search">
     <h3 class="search-name"><%= show['show']['name'].truncate(23) %>
     </h3>

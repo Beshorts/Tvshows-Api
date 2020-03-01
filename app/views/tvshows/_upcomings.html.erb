@@ -2,21 +2,21 @@
 <!-- shows_filter helper to avoid tv shows who don't fit cards parameters -->
 <% shows_filter.each do |show| %>
 <div class="card-upcomings">
-  <%= image_tag(show['show']['image']['medium']) %>
+  <%= image_tag(show['show']['image']['original']) %>
     <div class="btn-group dropdown">
       <h4 class="more-text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</h4>
       <div class="dropdown-menu  dropdown-menu-right">
         <div class="dropdown-text">
-          <h2 class="episode-name"><%= show['name'] %></h2>
+          <h3 class="episode-name"><%= show['name'] %></h3>
           <div class="airtime-network">
-            <h4 class="airtime">At h<%= show['airtime'] %></h4>
+            <p class="airtime">At h<%= show['airtime'] %></p>
             <% if show['show']['network'].nil? %>
-            <h4 class="network"> - on <%= show['show']['webChannel']['name'] %>
-            </h4>
+            <p class="network"> - on <%= show['show']['webChannel']['name'].truncate(16) %>
+            </p>
             <%end%>
             <% if !show['show']['network'].nil? %>
-            <h4 class="network"> - on <%= show['show']['network']['name'] %>
-            </h4>
+            <p class="network"> - on <%= show['show']['network']['name'].truncate(16) %>
+            </p>
             <%end %>
           </div> <!-- close airtime-network-->
           <% if show['summary'].nil? %>
@@ -26,7 +26,7 @@
           <p class="summary">"<%= show['summary'].gsub(%r{</?[^>]+?>}, '') %>"</p>
           <%end %>
           <div class="divider">
-            <h4 class="tvshow-details"><%= link_to "Tvshow details",tvshow_path(show['show']['id']) %></h4>
+            <p class="tvshow-details"><%= link_to "Tvshow details",tvshow_path(show['show']['id']) %></p>
           </div> <!-- close divider-->
         </div> <!-- close dropdown-text -->
       </div> <!-- close btn dropleft -->

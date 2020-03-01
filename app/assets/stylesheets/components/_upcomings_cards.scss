@@ -27,16 +27,16 @@
         padding-bottom: 0.3rem;
         display: flex;
         align-items: center;
-        .fa-calendar-alt {
-          color: $yellow;
-          font-size: 1em;
-        }
+          .fa-calendar-alt {
+            color: $yellow;
+            font-size: 1em;
+          }
+          .airdate {
+            font-weight: $bold;
+            opacity: 0.4;
+            padding-left: 0.75rem;
+          }
       } // close airdate-calendar
-      .airdate {
-        font-weight: $bold;
-        opacity: 0.4;
-        padding-left: 0.75rem;
-      }
       .season-episode {
         padding-bottom: 1rem;
         display: flex;
@@ -87,9 +87,9 @@
   background-color: $dark-blue-grey;
   box-shadow: 8px 8px 16px  rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  width: 25rem;
+  width: 20rem;
   .dropdown-text {
-    padding: 1.375rem 2rem;
+    padding: 1.2rem 1.5rem;
   }
   .episode-name {
     line-height: 1em;
@@ -119,8 +119,8 @@
     .tvshow-details {
       font-weight: $semi-bold;
       text-align: center;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
     }
     .tvshow-details a {
       color: $yellow;
@@ -135,3 +135,33 @@
 } // close dropdown-menu
 
 
+
+@media (min-width: 375px) and (max-width: 480px) {
+
+.card-upcomings {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 0;
+  position: relative;
+  img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 360px;
+    height: auto;
+  }
+  .upcomings-text {
+    padding: 1.1rem 1.3rem;
+    .genre-shows {
+      padding-bottom: 2.3rem;
+    }
+  } // close upcomings-text
+} // close card-upcomings
+
+.btn-group {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1rem 1.25rem;
+}
+
+} // close media query
