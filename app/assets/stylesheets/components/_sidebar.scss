@@ -4,42 +4,55 @@
   display: none;
 }
 
-.sidebar {
+#sidebar {
   position: fixed;
+  z-index: 1;
   left: 0px;
   bottom: 0px;
   width: 12rem;
-  height: 86vh;
+  height: 80vh;
   background-color: $darker-blue-grey;
-  border-top-right-radius: 160px;
-}
+  border-top-right-radius: 6px;
+   #closePanel {
+    position: absolute;
+    cursor:pointer;
+    left: 9.5625rem;
+    top: 1.125rem;
+    .fa-times {
+    color: white;
+    font-size: 1.5em;
+    }
+  }
+  .sidebar-scroll {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(26, 8%);
+    margin-top: 3.75rem;
+    overflow-y: scroll;
+    height: 70vh;
 
-.sidebar-scroll {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(26, 8%);
-  margin-top: 8.75rem;
-  overflow-y: scroll;
-  height: 70vh;
-}
+  }
 // center texts inside link_to rows
-.sidebar-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .sidebar-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+} // close sidebar
+
+
 
 .sidebar-scroll a {
   transition:  1s ease;
   h3 {
-  transition:  1s ease;
+    transition:  1s ease;
   }
 }
 
 .sidebar-scroll a:hover {
-text-decoration: none;
-background-color: $lightdark-blue-grey;
-h3 {
-  color: $yellow;
+  text-decoration: none;
+  background-color: $lightdark-blue-grey;
+  h3 {
+    color: $yellow;
   }
 }

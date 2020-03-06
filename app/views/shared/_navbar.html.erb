@@ -1,23 +1,49 @@
-<div class="navbar-home">
-  <div class="logo">
+
+<nav class="main-navbar">
+  <div class="navbar navbar-expand-sm navbar-light navbar-first">
+    <%= link_to "#", class: "navbar-brand" do %>
     <%= image_tag "tvshowzLogo.png" %>
-  </div>
-  <!-- search bar -->
-   <%= form_tag(tvshows_path, :method => "get", enforce_utf8: false) do %>
-    <div class="input-group">
-     <%= text_field_tag :search, params[:search], id: "search-input",
-      placeholder: "Search for a Tv show", class: "form-control" %>
-      <%= button_tag(type: "submit", class: "btn btn-warning search-btn") do %>
-      <i class="fa fa-search"></i>
-      <% end %>
-      </div>
     <% end %>
-  <!-- end search bar -->
-  <div class="nav-item">
-  <% if user_signed_in? %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
-  <% else %>
-    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-  <% end %>
-  </div>
-</div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+       <%= form_tag(tvshows_path, :method => "get", enforce_utf8: false) do %>
+       <div class="input-group nav-item">
+         <%= text_field_tag :search, params[:search], id: "search-input",
+         placeholder: "Search for a Tv show", class: "form-control" %>
+         <%= button_tag(type: "submit", class: "btn btn-warning search-btn") do %>
+         <i class="fa fa-search"></i>
+         <% end %>
+       </div>
+       <% end %>
+       <li class="nav-item profile">
+        <%= link_to "my profile", "#", class: "nav-link profile" %>
+        </li>
+        <li class="nav-item log">
+         <% if user_signed_in? %>
+         <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link btn-log btn-primary"  %>
+         <% else %>
+         <%= link_to "Login", new_user_session_path, class: "nav-link btn-log btn-primary" %>
+         <% end %>
+       </li>
+     </ul>
+   </div> <!--close navbar-collapse -->
+  </div> <!--close navbar-first -->
+  <div class="navbar-navigation">
+    <div class="navigation">
+      <%= link_to root_path do %>
+      <h3 class="home-nav">HOME
+      </h3>
+      <% end %>
+      <%= link_to tvshows_path do %>
+      <h3 class="upcomings-nav">UPCOMING
+      </h3>
+      <% end %>
+      <a><h3 id="genres-nav">GENRES
+      </h3>
+      </a>
+    </div>
+  </div> <!--close navbar-navigation -->
+</nav>

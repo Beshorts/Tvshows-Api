@@ -16,11 +16,9 @@ Promise.all([
     fetch("https://api.tvmaze.com/singlesearch/shows?q=the-dead-lands").then(response => response.json()),
     fetch("https://api.tvmaze.com/singlesearch/shows?q=you").then(response => response.json()),
     fetch("https://api.tvmaze.com/singlesearch/shows?q=kidding").then(response => response.json()),
-
-
 ]).then((data) => {
     data.forEach((result) => {
-        const movie = ` <div class="images col py-3">
+        const movie = `<div class="images col px-2 py-3">
         <img class="show-image" src="${result['image']['medium']}" alt="poster TV shows">
         </div>`;
         results.insertAdjacentHTML("beforeend", movie);
