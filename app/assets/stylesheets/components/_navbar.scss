@@ -1,77 +1,240 @@
-.navbar-home {
-  background-color: $darker-blue-grey;
-  width: 100vw;
+
+.main-navbar {
+  background: $darker-blue-grey;
   position: fixed;
+  width: 100%;
   z-index: 1;
-  top: 0;
-  height: 7rem;
   display: flex;
+  flex-direction: column;
+}
+.navbar-first {
   justify-content: space-between;
-  align-items: center;
+  padding-bottom: 1em;
+}
+.navbar-toggler {
+  padding-top: 1rem;
+}
+.navbar-toggler .fas {
+  color: white;
+  font-size: 1.5em;
+  }
+
+.navbar-toggler:focus {
+  outline: none;
 }
 
-.navbar-home .input-group {
-  margin-top: 1.5625rem;
+.navbar-expand-sm .navbar-nav {
+  padding-top: 1.875rem;
+  padding-left: 1.25rem;
+  justify-content: space-between;
 }
 
-// add flew-grow for responsive behaviour from 1440 to 768
-form {
-  flex-grow: 1;
+.navbar-first .navbar-collapse {
+  flex-grow: 0;
+  background: $darker-blue-grey;
 }
 
-.navbar-home  .form-control {
- border-radius: 100px;
+.navbar-brand {
+  padding: 0.625rem 1.25rem;
+  margin: 0;
+}
+
+.navbar-first .navbar-brand img {
+  width: 5rem;
+}
+
+.nav-item   {
+  padding: 1.25rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  font-size: 1.2em;
+  padding: 0.3125rem 1.25rem;
+  border-radius: 4px;
+  transition: 0.5s ease ;
+ }
+
+.navbar-light .navbar-nav  .btn-log:focus {
+  box-shadow: none !important;
+}
+
+.navbar-light .navbar-nav .profile:hover {
+    color: $light-orange;
+}
+
+// search-bar
+
+.navbar-first .form-control {
+ width: 43.75rem;
+ border-radius: 6.25rem;
  border: none;
 }
 
 #search-input {
  background-color: $lightdark-blue-grey;
 }
+.form-control:focus {
+  box-shadow: none !important;
+}
 
-.navbar-home .input-group .btn-warning {
-  background-color: $darker-blue-grey;
+.navbar-first .input-group .btn-warning {
+  background-color: $lightdark-blue-grey;
   border: none;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  transition: 0.6s;
-
+  transition: 0.6s ease;
   .fa-search {
     color: #74777c;
-    transition:  1s ease;
+    transition:  0.5s ease;
   }
 }
 
-.navbar-home .input-group .btn-warning:hover {
+.navbar-first .input-group .btn-warning:hover {
   background-color: $lightdark-blue-grey;
   .fa-search {
     color: $light-orange;
   }
 }
 
-// add flew-grow for responsive search bar behaviour from 1440 to 768
-.logo  {
-  flex-grow: 1;
-  img {
-    width: 6.875rem;
-    padding: 0.8rem 0 0 2.875rem;
+.navbar-first .input-group .btn-warning:focus {
+  box-shadow: none;
+}
+.navbar-first .input-group .btn-warning:active:focus {
+  box-shadow: none;
+}
+
+// navbar-navigation
+
+.navbar-navigation {
+  display: block;
+  .navigation {
+    padding-bottom: 2rem;
+    width: 31.25rem;
+    display: grid;
+    grid-template-columns: 28% 28% 28%;
+    justify-items: center;
+      .home-nav {
+      padding-bottom: 0.3125rem;
+      border-bottom: solid 1px $light-orange;
+      width: 0%;
+      transition:  0.5s ease;
+      }
+      .upcomings-nav {
+        padding-bottom: 0.3125rem;
+        border-bottom: solid 1px $light-orange;
+        width: 0%;
+        transition:  0.5s ease;
+      }
+        #genres-nav {
+        justify-self: center;
+        cursor:pointer;
+        padding-bottom: 0.3125rem;
+        border-bottom: solid 1px $light-orange;
+        width: 0%;
+        transition:  0.5s ease;
+      }
+   } // close navigation
+      .navigation a:hover {
+        text-decoration: none;
+        .home-nav:hover {
+         color: $light-orange;
+         padding-bottom: 0.3125rem;
+         border-bottom: solid 1px $light-orange;
+         width: 100%;
+      }
+      .upcomings-nav:hover {
+         color: $light-orange;
+         padding-bottom: 0.3125rem;
+         border-bottom: solid 1px $light-orange;
+         width: 100%;
+      }
+       #genres-nav:hover {
+        color: $light-orange;
+         padding-bottom: 0.3125rem;
+         border-bottom: solid 1px $light-orange;
+         width: 100%;
+       }
+     } // close navigation a:hover
+} // close navbar-navigation
+
+
+// media queries
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .navbar-first .form-control {
+    width: 35.375rem;
   }
 }
 
-// add flew-grow for responsive search bar behaviour from 1440 to 768
-.nav-item  {
-  flex-grow: 1;
-  a {
-    float: right;
-    font-family: $body-font;
-    font-size: 1rem;
-    padding: 1.875rem 2.5rem 0 0;
-    font-weight: $semi-bold;
-    transition:  1s ease;
-
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbar-first .form-control {
+    width: 18rem;
   }
 }
 
-.nav-item a:hover {
-  color: $light-orange;
+@media (min-width: 481px) and (max-width: 767px) {
+  .navbar-first  .form-control {
+    width: auto;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    background: none;
+  }
+
+   .navbar-light .navbar-nav .profile {
+    transition: 0.5s ease;
+  }
+
+   .navbar-light .navbar-nav .profile:hover {
+    background: $lightdark-blue-grey;
+  }
+
+  .navbar-light .navbar-nav .btn-primary {
+    background: none;
+    transition: 0.5s ease;
+  }
+  .navbar-light .navbar-nav .btn-log:hover {
+    color: $light-orange;
+  }
+
+     .navbar-light .navbar-nav .log {
+     transition: 0.5s ease;
+  }
+   .navbar-light .navbar-nav .log:hover {
+    background: $lightdark-blue-grey;
+  }
 }
 
+@media (min-width: 375px) and (max-width: 480px) {
+   .navbar-first  .form-control {
+    width: auto;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    background: none;
+  }
+
+   .navbar-light .navbar-nav .profile {
+    transition: 0.5s ease;
+  }
+
+   .navbar-light .navbar-nav .profile:hover {
+    background: $lightdark-blue-grey;
+  }
+
+  .navbar-light .navbar-nav .btn-primary {
+    background: none;
+    transition: 0.5s ease;
+  }
+  .navbar-light .navbar-nav .btn-log:hover {
+    color: $light-orange;
+  }
+
+     .navbar-light .navbar-nav .log {
+     transition: 0.5s ease;
+  }
+   .navbar-light .navbar-nav .log:hover {
+    background: $lightdark-blue-grey;
+  }
+}

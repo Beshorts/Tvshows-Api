@@ -37,7 +37,20 @@
 }
 
 .cards-search:hover {
+
+  background-color: black;
   opacity: 0.5;
 }
 
 
+@media (min-width: 481px) and (max-width: 767px) {
+  .cards-search img {
+    height: 39.125rem;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 480px) {
+  .cards-search img {
+    height: 35.125rem;
+  }
+}

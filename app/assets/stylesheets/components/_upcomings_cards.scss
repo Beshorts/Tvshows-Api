@@ -80,6 +80,11 @@
     color: $yellow;
     font-weight: $bold;
     padding-top: 1rem;
+    transition: 0.3s ease;
+  }
+
+  .more-text:hover {
+    color: gray;
   }
 } // close btn-group
 
@@ -146,7 +151,7 @@
   img {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    width: 360px;
+    width: 22.5rem;
     height: auto;
   }
   .upcomings-text {
