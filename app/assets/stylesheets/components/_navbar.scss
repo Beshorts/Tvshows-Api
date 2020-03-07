@@ -11,9 +11,11 @@
   justify-content: space-between;
   padding-bottom: 1em;
 }
+
 .navbar-toggler {
   padding-top: 1rem;
 }
+
 .navbar-toggler .fas {
   color: white;
   font-size: 1.5em;
@@ -55,13 +57,17 @@
   transition: 0.5s ease ;
  }
 
-.navbar-light .navbar-nav  .btn-log:focus {
-  box-shadow: none !important;
-}
-
-.navbar-light .navbar-nav .profile:hover {
-    color: $light-orange;
-}
+.navbar-light .navbar-nav {
+  .btn-log:focus {
+    box-shadow: none !important;
+  }
+   .profile:hover {
+      color: $light-orange;
+  }
+   .profile:focus {
+      color: gray;
+  }
+} // close .navbar-light .navbar-nav
 
 // search-bar
 
