@@ -9,13 +9,6 @@ Promise.all([
     fetch("https://api.tvmaze.com/singlesearch/shows?q=see").then(response => response.json()),
     fetch("https://api.tvmaze.com/singlesearch/shows?q=hunters").then(response => response.json()),
     fetch("https://api.tvmaze.com/singlesearch/shows?q=the-walking-dead").then(response => response.json()),
-    fetch("https://api.tvmaze.com/singlesearch/shows?q=star-trek-picard").then(response => response.json()),
-    fetch("https://api.tvmaze.com/singlesearch/shows?q=euphoria").then(response => response.json()),
-    fetch("https://api.tvmaze.com/singlesearch/shows?q=the-flash").then(response => response.json()),
-    fetch("https://api.tvmaze.com/singlesearch/shows?q=prodigal-son").then(response => response.json()),
-    fetch("https://api.tvmaze.com/singlesearch/shows?q=the-dead-lands").then(response => response.json()),
-    fetch("https://api.tvmaze.com/singlesearch/shows?q=you").then(response => response.json()),
-    fetch("https://api.tvmaze.com/singlesearch/shows?q=kidding").then(response => response.json()),
 ]).then((data) => {
     data.forEach((result) => {
         const movie = `<div class="images">
