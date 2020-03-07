@@ -18,7 +18,7 @@ Promise.all([
     fetch("https://api.tvmaze.com/singlesearch/shows?q=kidding").then(response => response.json()),
 ]).then((data) => {
     data.forEach((result) => {
-        const movie = `<div class="images col px-2 py-3">
+        const movie = `<div class="images">
         <img class="show-image" src="${result['image']['medium']}" alt="poster TV shows">
         </div>`;
         results.insertAdjacentHTML("beforeend", movie);

@@ -2,7 +2,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   height: 100vh;
-  background-color: $dark-blue-grey;
+  // body-bg define in bootstrap_variables.scss
 }
 
 // hide scrollbar from chrome, safari and opera on body pages
@@ -15,7 +15,6 @@ h1, h2, h3 {
   color: $white;
   letter-spacing: 0.04em;
   margin: 0;                // kill default margin
-
 }
 
 h1 {
