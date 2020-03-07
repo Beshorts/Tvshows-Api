@@ -1,8 +1,8 @@
 
 .results {
   max-width: 75.75rem;
-  padding-top: 15.625rem;
-  padding-bottom: 5rem;
+  padding-top: 14.625rem;
+  padding-bottom: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, 276px);
   grid-row-gap: 2.5rem;
@@ -34,8 +34,8 @@
 @media (min-width: 375px) and (max-width: 480px) {
    .results {
     padding-top: 12rem;
-    grid-template-columns: repeat(auto-fill, 500px);
-    grid-template-rows: repeat(auto-fill, 500px);
+    grid-template-columns: repeat(auto-fill, 22.25rem);
+    grid-template-rows: repeat(auto-fill, 31.25rem);
    }
   .images .show-image {
     height: 502px;
