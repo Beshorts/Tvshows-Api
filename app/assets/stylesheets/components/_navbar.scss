@@ -79,6 +79,7 @@
 
 #search-input {
  background-color: $lightdark-blue-grey;
+ color: white;
 }
 .form-control:focus {
   box-shadow: none !important;
@@ -89,10 +90,10 @@
   border: none;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  transition: 0.6s ease;
+  transition: 0.3s ease;
   .fa-search {
     color: #74777c;
-    transition:  0.5s ease;
+    transition:  0.3s;
   }
 }
 
@@ -118,19 +119,19 @@
     padding-bottom: 2rem;
     width: 31.25rem;
     display: grid;
-    grid-template-columns: 28% 28% 28%;
+    grid-template-columns: 25% 25% 25%;
     justify-items: center;
       .home-nav {
       padding-bottom: 0.3125rem;
       border-bottom: solid 1px $light-orange;
       width: 0%;
-      transition:  0.5s ease;
+      transition:  0.3s;
       }
       .upcomings-nav {
         padding-bottom: 0.3125rem;
         border-bottom: solid 1px $light-orange;
         width: 0%;
-        transition:  0.5s ease;
+        transition:  0.3s;
       }
         #genres-nav {
         justify-self: center;
@@ -138,7 +139,7 @@
         padding-bottom: 0.3125rem;
         border-bottom: solid 1px $light-orange;
         width: 0%;
-        transition:  0.5s ease;
+        transition:  0.3s;
       }
    } // close navigation
       .navigation a:hover {
@@ -167,52 +168,7 @@
 
 // media queries
 
-@media (min-width: 1024px) and (max-width: 1280px) {
-  .navbar-first .form-control {
-    width: 35.375rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .navbar-first .form-control {
-    width: 18rem;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 767px) {
-  .navbar-first  .form-control {
-    width: auto;
-  }
-
-  .navbar-light .navbar-nav .nav-link:hover {
-    background: none;
-  }
-
-   .navbar-light .navbar-nav .profile {
-    transition: 0.5s ease;
-  }
-
-   .navbar-light .navbar-nav .profile:hover {
-    background: $lightdark-blue-grey;
-  }
-
-  .navbar-light .navbar-nav .btn-primary {
-    background: none;
-    transition: 0.5s ease;
-  }
-  .navbar-light .navbar-nav .btn-log:hover {
-    color: $light-orange;
-  }
-
-     .navbar-light .navbar-nav .log {
-     transition: 0.5s ease;
-  }
-   .navbar-light .navbar-nav .log:hover {
-    background: $lightdark-blue-grey;
-  }
-}
-
-@media (min-width: 375px) and (max-width: 480px) {
+@media (min-width: 374.98px) {
    .navbar-first  .form-control {
     width: auto;
   }
@@ -222,25 +178,65 @@
   }
 
    .navbar-light .navbar-nav .profile {
-    transition: 0.5s ease;
+    transition: 0.3s;
   }
 
-   .navbar-light .navbar-nav .profile:hover {
-    background: $lightdark-blue-grey;
-  }
 
   .navbar-light .navbar-nav .btn-primary {
     background: none;
-    transition: 0.5s ease;
+    transition: 0.3s;
   }
   .navbar-light .navbar-nav .btn-log:hover {
     color: $light-orange;
   }
 
      .navbar-light .navbar-nav .log {
-     transition: 0.5s ease;
-  }
-   .navbar-light .navbar-nav .log:hover {
-    background: $lightdark-blue-grey;
+     transition: 0.3s;
   }
 }
+
+@media (min-width: 480.98px)  {
+  .navbar-first  .form-control {
+    width: auto;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    background: none;
+  }
+
+   .navbar-light .navbar-nav .profile {
+    transition: 0.3s;
+  }
+
+  .navbar-light .navbar-nav .btn-primary {
+    background: none;
+    transition: 0.3s;
+  }
+  .navbar-light .navbar-nav .btn-log:hover {
+    color: $light-orange;
+  }
+
+     .navbar-light .navbar-nav .log {
+     transition: 0.3s;
+  }
+}
+
+@media (min-width: 766.98px) {
+  .navbar-first .form-control {
+    width: 18rem;
+  }
+  .navbar-light .navbar-nav .profile {
+    font-size: 12px;
+    padding: 0px 7px;
+    padding-top: 16px;
+  }
+}
+
+@media (min-width: 1023.98px)  {
+  .navbar-first .form-control {
+    width: 35.375rem;
+  }
+}
+
+
+
